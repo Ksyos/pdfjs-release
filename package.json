@@ -6,7 +6,10 @@
     "scripts": {
         "update": "./update.sh"
     },
-    "repository": "github:KsyosTech/pdfjs-release",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:ksyos/pdfjs-release"
+    },
     "license": "Apache-2.0",
     "files": [
         "/build",
