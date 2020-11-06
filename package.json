@@ -1,10 +1,13 @@
 {
     "name": "@ksyos/pdfjs-release",
-    "version": "2.5.207-es5-dist",
+    "version": "2.5.207",
     "description": "Prebuilt release from Mozilla's PDF.js repackaged as a node module",
     "main": "index.js",
     "scripts": {
         "update": "./update.sh"
+    },
+    "config": {
+        "es5Version": "2.5.207-es5-dist"
     },
     "repository": {
         "type": "git",
