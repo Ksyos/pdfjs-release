@@ -25,7 +25,7 @@ curl -L $RELEASE_ASSET_URL -o latest.zip
 rm -rf build web LICENSE
 unzip latest.zip
 rm latest.zip
-sed -i "/version/s/: .*/: \"$RELEASE_VERSION\",/" package.json
+sed -i "/version/s/: .*/: \"$RELEASE_VERSION-es5-dist\",/" package.json
 
 echo
 echo "Now check that things are okay and run: npm publish"
