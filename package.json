@@ -6,6 +6,9 @@
     "scripts": {
         "update": "./update.sh"
     },
+    "config": {
+        "es5Version": "2.5.207-es5-dist"
+    },
     "repository": {
         "type": "git",
         "url": "git@github.com:ksyos/pdfjs-release"
