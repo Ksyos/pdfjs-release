@@ -9,17 +9,17 @@ if [[ $(echo "$RELEASE" | jq -r '.assets | length') < 1 ]]; then
     exit 1
 fi
 
-if [[ $(echo "$RELEASE" | jq -r '.assets[0].content_type') != *zip* ]]; then
+if [[ $(echo "$RELEASE" | jq -r '.assets[1].content_type') != *zip* ]]; then
     echo "Unexpected content type for latest release ($RELEASE_VERSION)" >&2
     exit 1
 fi
 
-if [[ $(echo "$RELEASE" | jq -r '.assets[0].name') == *es5* ]]; then
+if [[ $(echo "$RELEASE" | jq -r '.assets[1].name') != *es5* ]]; then
     echo "Unexpected asset name for latest release ($RELEASE_VERSION)" >&2
     exit 1
 fi
 
-RELEASE_ASSET_URL=$(echo "$RELEASE" | jq -r '.assets[0].browser_download_url')
+RELEASE_ASSET_URL=$(echo "$RELEASE" | jq -r '.assets[1].browser_download_url')
 
 curl -L $RELEASE_ASSET_URL -o latest.zip
 rm -rf build web LICENSE
