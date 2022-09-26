@@ -16,7 +16,13 @@ rm -rf build web LICENSE
 unzip latest.zip
 rm latest.zip
 
+echo "#presentationMode { display: none !important; } " >> web/viewer.css
+echo "#openFile { display: none !important; } "  >> web/viewer.css
+echo "#viewBookmark { display: none !important; } " >> web/viewer.css
+
 sed -i "/version/s/: .*/: \"$RELEASE_VERSION\",/" package.json
 
 echo
 echo "Now check that things are okay and run: npm publish"
+
+
