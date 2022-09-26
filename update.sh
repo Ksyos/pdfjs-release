@@ -24,5 +24,3 @@ sed -i "/version/s/: .*/: \"$RELEASE_VERSION\",/" package.json
 
 echo
 echo "Now check that things are okay and run: npm publish"
-
-
