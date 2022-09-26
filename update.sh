@@ -16,9 +16,7 @@ rm -rf build web LICENSE
 unzip latest.zip
 rm latest.zip
 
-echo "#presentationMode { display: none !important; } " >> web/viewer.css
-echo "#openFile { display: none !important; } "  >> web/viewer.css
-echo "#viewBookmark { display: none !important; } " >> web/viewer.css
+echo "#presentationMode, #openFile, #viewBookmark { display: none !important; } " >> web/viewer.css
 
 sed -i "/version/s/: .*/: \"$RELEASE_VERSION\",/" package.json
 
