@@ -1,6 +1,6 @@
 # PDF.js Node Module
 
-This is the [prebuilt release](https://mozilla.github.io/pdf.js/getting_started/#download) from Mozilla's PDF.js repackaged as a node module. No changes are made, only a `package.json` is added.
+This is the [prebuilt release](https://mozilla.github.io/pdf.js/getting_started/#download) from Mozilla's PDF.js repackaged as a node module. Only a `package.json` is added and the buttons to open the bookmarks, to open another file and presentation mode are removed.
 
 To update and publish, run:
 
