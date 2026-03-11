@@ -5,7 +5,8 @@
     "scripts": {
         "update": "./update.sh",
         "update:mac": "./update.sh",
-        "update:win": "bash update.sh"
+        "update:win": "bash update.sh",
+        "test": "playwright test"
     },
     "repository": {
         "type": "git",
@@ -16,5 +17,12 @@
         "/build",
         "/web",
         "/LICENSE"
-    ]
+    ],
+    "devDependencies": {
+        "@playwright/test": "^1.52.0",
+        "serve": "^14.2.4"
+    },
+    "dependencies": {
+        "@ksyos/pdfjs-release": "file:.yalc/@ksyos/pdfjs-release"
+    }
 }

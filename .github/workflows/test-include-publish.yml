@@ -1,0 +1,32 @@
+# Inspired by https://github.com/Ksyos/github-actions-ci/blob/master/.github/workflows/library-include-publish.yml
+name: Test and publish
+on:
+    workflow_dispatch:
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Run update script
+              run: ./update.sh
+            - name: Store build artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: dist
+                  path: |
+                      build
+                      web
+                      LICENSE
+                  retention-days: 1
+    test:
+        if: github.ref == 'refs/heads/master'
+        uses: ./.github/workflows/test.yml
+        with:
+            NODE_VERSION: 22
+    publish:
+        needs: [build, test]
+        uses: Ksyos/github-actions-ci/.github/workflows/library-publish.yml@master
+        with:
+            NODE_VERSION: 22

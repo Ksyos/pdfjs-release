@@ -1,0 +1,32 @@
+# Inspired by https://github.com/Ksyos/github-actions-ci/blob/master/.github/workflows/shared-verify.yml
+name: Test
+on:
+    workflow_call:
+        inputs:
+            NODE_VERSION:
+                required: true
+                type: number
+
+jobs:
+    test:
+        name: Test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - name: Setup Node ${{ inputs.NODE_VERSION }} and dependencies
+              uses: Ksyos/github-actions-ci/.github/actions/setup-node-and-dependencies@master
+              with:
+                  NODE_VERSION: ${{ inputs.NODE_VERSION }}
+            - name: Install Playwright browsers
+              run: npx playwright install --with-deps chromium
+            - name: Run Playwright tests
+              run: npx playwright test
+            - name: Upload Playwright report
+              uses: actions/upload-artifact@v4
+              if: ${{ !cancelled() }}
+              with:
+                  name: playwright-report
+                  path: playwright-report/
+                  retention-days: 7

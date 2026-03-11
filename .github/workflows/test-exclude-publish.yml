@@ -1,0 +1,13 @@
+# Inspired by https://github.com/Ksyos/github-actions-ci/blob/master/.github/workflows/library-exclude-publish.yml
+name: Test
+on:
+    push:
+        branches: [master]
+    pull_request:
+        types: [opened, synchronize, reopened]
+
+jobs:
+    test:
+        uses: ./.github/workflows/test.yml
+        with:
+            NODE_VERSION: 22
