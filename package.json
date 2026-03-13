@@ -1,11 +1,11 @@
 {
     "name": "@ksyos/pdfjs-release",
-    "version": "3.7.107",
+    "version": "5.5.207",
     "description": "Prebuilt release from Mozilla's PDF.js repackaged as a node module",
-    "main": "index.js",
     "scripts": {
+        "update": "./update.sh",
         "update:mac": "./update.sh",
-        "update:win": "update.sh"
+        "update:win": "bash update.sh"
     },
     "repository": {
         "type": "git",
