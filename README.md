@@ -5,10 +5,10 @@ This is the [prebuilt release](https://mozilla.github.io/pdf.js/getting_started/
 To update and publish, run:
 
 ```
-npm run update
-# or npm run update:win on Windows (Git Bash / MSYS bash required)
-npm pack
-npm publish
+pnpm run update
+# or pnpm run update:win on Windows (Git Bash / MSYS bash required)
+pnpm pack
+pnpm publish
 ```
 
 **Warning**
