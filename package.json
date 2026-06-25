@@ -2,6 +2,7 @@
     "name": "@ksyos/pdfjs-release",
     "version": "5.5.207",
     "description": "Prebuilt release from Mozilla's PDF.js repackaged as a node module",
+    "packageManager": "pnpm@11.7.0",
     "scripts": {
         "update": "./update.sh",
         "update:mac": "./update.sh",

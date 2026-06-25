@@ -1,0 +1,7 @@
+# pnpm gets all non-auth configuration from this file (pnpm 11 only reads auth
+# and registry settings from .npmrc).
+
+# Use a flat, real node_modules tree (like npm / Yarn classic) instead of pnpm's
+# default symlinked isolated store, matching the convention used across the other
+# Ksyos repositories.
+nodeLinker: hoisted
